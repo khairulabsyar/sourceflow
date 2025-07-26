@@ -5,12 +5,14 @@ A beautiful, modern recruitment website built with Next.js, TypeScript, and Tail
 ## 🚀 Features
 
 ### ✨ **Modern Design & UX**
+
 - **Responsive Design**: Fully optimized for mobile, tablet, and desktop
 - **Smooth Animations**: Framer Motion powered scroll-triggered and interactive animations
 - **Accessibility**: ARIA labels, keyboard navigation, and screen reader support
 - **Performance Optimized**: Next.js Image optimization and lazy loading
 
 ### 🎯 **Key Sections**
+
 - **Hero Section**: Eye-catching landing with search functionality and animated stats
 - **Client Showcase**: Trusted company logos with loading states and error handling
 - **Latest Jobs**: Interactive job carousel with smooth slide transitions and staggered animations
@@ -18,6 +20,7 @@ A beautiful, modern recruitment website built with Next.js, TypeScript, and Tail
 - **Footer**: Comprehensive links and social media integration
 
 ### 🔧 **Technical Highlights**
+
 - **Framework**: Next.js 14 with App Router
 - **Styling**: Tailwind CSS with custom design system
 - **Animations**: Framer Motion for smooth, performant animations
@@ -63,18 +66,21 @@ src/
 ## 🎨 Design Features
 
 ### **Color Scheme**
+
 - Primary Blue: `#064EA4`
 - Accent Orange: `#F99D76`
 - Accent Yellow: `#FCDF69`
 - Background Blue: `#D7E7FB`
 
 ### **Job Card Variants**
+
 - **Featured**: Blue gradient with special badge
 - **Yellow**: Bright yellow background
 - **Gray**: Clean gray background
 - **Peach**: Soft peach background
 
 ### **Animation Highlights**
+
 - Scroll-triggered animations with `AnimateOnScroll` component
 - Staggered card animations in job listings
 - Smooth slide transitions between job sets
@@ -84,18 +90,21 @@ src/
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - npm, yarn, or pnpm
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd SourceFlow
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    # or
@@ -105,6 +114,7 @@ src/
    ```
 
 3. **Run the development server**
+
    ```bash
    npm run dev
    # or
@@ -126,6 +136,7 @@ npm start
 ## 🔧 Configuration
 
 ### **Adding New Jobs**
+
 Update the jobs array in `src/lib/constants/index.tsx`:
 
 ```typescript
@@ -138,64 +149,33 @@ export const jobs = [
     salary: '$XX,XXX - $XX,XXX',
     type: 'Full-time',
     description: 'Job description...',
-    postedDate: 'X days ago'
-  }
+    postedDate: 'X days ago',
+  },
 ];
 ```
 
 ### **Customizing Animations**
+
 Modify animation variants in components or create new ones in the constants file.
 
 ### **Updating Company Logos**
+
 Add new companies to the `companies` array in constants:
 
 ```typescript
 export const companies = [
   {
     name: 'Company Name',
-    logo: '/logos/company-logo.png'
-  }
+    logo: '/logos/company-logo.png',
+  },
 ];
 ```
 
 ## 📱 Responsive Breakpoints
 
 - **Mobile**: < 640px
-- **Tablet**: 640px - 1024px  
+- **Tablet**: 640px - 1024px
 - **Desktop**: > 1024px
-
-## 🎯 Performance Optimizations
-
-- **Image Optimization**: Next.js Image component with proper sizing
-- **Lazy Loading**: Components load as they enter viewport
-- **Code Splitting**: Automatic code splitting with Next.js
-- **Animation Performance**: Hardware-accelerated animations with Framer Motion
-- **Bundle Optimization**: Tree shaking and dead code elimination
-
-## 🚀 Deployment
-
-### **Vercel (Recommended)**
-1. Push code to GitHub
-2. Connect repository to Vercel
-3. Deploy automatically
-
-### **Other Platforms**
-```bash
-npm run build
-```
-Deploy the `out` folder to your hosting platform.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License.
 
 ---
 
