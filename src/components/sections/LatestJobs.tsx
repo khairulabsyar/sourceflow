@@ -3,12 +3,12 @@
 import { Button } from '@/components/ui/Button';
 import { JobCard } from '@/components/ui/JobCard';
 import { jobs } from '@/lib/constants';
+import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 
 export function LatestJobs() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const visibleJobs = jobs.slice(currentIndex, currentIndex + 3);
   const totalJobs = jobs.length;
@@ -69,15 +69,15 @@ export function LatestJobs() {
           </div>
 
           <AnimatePresence mode="wait">
-            <motion.div 
+            <motion.div
               key={currentIndex}
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
-              transition={{ 
+              transition={{
                 duration: 0.4,
-                ease: [0.16, 1, 0.3, 1]
+                ease: [0.16, 1, 0.3, 1],
               }}
             >
               {visibleJobs.map((job, index) => {
@@ -91,10 +91,10 @@ export function LatestJobs() {
                     key={job.id}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ 
+                    transition={{
                       duration: 0.3,
                       delay: index * 0.1,
-                      ease: [0.16, 1, 0.3, 1]
+                      ease: [0.16, 1, 0.3, 1],
                     }}
                   >
                     <JobCard

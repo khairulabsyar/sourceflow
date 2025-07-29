@@ -1,15 +1,8 @@
 'use client';
 
+import { AnimateOnScrollProps } from '@/lib/definitions';
 import { motion, useInView } from 'framer-motion';
-import { ReactNode, useRef } from 'react';
-
-type AnimateOnScrollProps = {
-  children: ReactNode;
-  delay?: number;
-  direction?: 'up' | 'down' | 'left' | 'right';
-  className?: string;
-  once?: boolean;
-};
+import { useRef } from 'react';
 
 export function AnimateOnScroll({
   children,

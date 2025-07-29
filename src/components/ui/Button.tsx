@@ -1,15 +1,6 @@
-import { ButtonHTMLAttributes, forwardRef } from 'react';
+import { ButtonProps } from '@/lib/definitions';
+import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
-
-type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
-type ButtonSize = 'sm' | 'md' | 'lg';
-
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-  isLoading?: boolean;
-  fullWidth?: boolean;
-}
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, children, variant = 'primary', size = 'md', isLoading = false, fullWidth = false, ...props }, ref) => {

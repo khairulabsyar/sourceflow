@@ -1,12 +1,5 @@
+import { SearchBarProps } from '@/lib/constants';
 import { Loader2, Search } from 'lucide-react';
-import { InputHTMLAttributes } from 'react';
-
-export interface SearchBarProps extends InputHTMLAttributes<HTMLInputElement> {
-  onSearch?: (e: React.FormEvent) => void;
-  searchButtonText?: string;
-  containerClassName?: string;
-  isLoading?: boolean;
-}
 
 export function SearchBar({
   className = '',

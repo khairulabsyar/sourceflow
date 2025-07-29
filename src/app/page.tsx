@@ -1,9 +1,9 @@
 'use client';
 
-import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { Hero } from '@/components/sections/Hero';
+import { Header } from '@/components/layout/Header';
 import { Clients } from '@/components/sections/Clients';
+import { Hero } from '@/components/sections/Hero';
 import { LatestJobs } from '@/components/sections/LatestJobs';
 
 export default function Home() {

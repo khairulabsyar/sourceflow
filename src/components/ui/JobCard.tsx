@@ -1,88 +1,8 @@
-import { motion, Variants } from 'framer-motion';
+import { cardVariants, variantStyles } from '@/lib/constants';
+import { JobCardProps } from '@/lib/definitions';
+import { motion } from 'framer-motion';
 import { ArrowRight, Banknote, Briefcase, Clock, MapPin } from 'lucide-react';
 import { Button } from './Button';
-
-type CardVariant = 'default' | 'featured' | 'yellow' | 'gray' | 'peach';
-
-type JobCardProps = {
-  title: string;
-  company: string;
-  location: string;
-  salary: string;
-  type: string;
-  description: string;
-  postedDate: string;
-  className?: string;
-  variant?: CardVariant;
-  isFeatured?: boolean;
-};
-
-// Define styles for each variant
-const variantStyles: Record<
-  CardVariant,
-  {
-    container: string;
-    typeBadge: string;
-    iconColor: string;
-    textColor: string;
-    secondaryTextColor: string;
-  }
-> = {
-  featured: {
-    container: 'border-2 border-blue-200 shadow-md bg-gradient-to-br from-blue-50 to-blue-100',
-    typeBadge: 'bg-blue-100 text-blue-800',
-    iconColor: 'text-blue-500',
-    textColor: 'text-gray-900',
-    secondaryTextColor: 'text-gray-700',
-  },
-  yellow: {
-    container: 'border border-gray-200 bg-[#FCDF69]',
-    typeBadge: 'bg-white/90 text-gray-900',
-    iconColor: 'text-gray-800',
-    textColor: 'text-gray-900',
-    secondaryTextColor: 'text-gray-900',
-  },
-  gray: {
-    container: 'border border-gray-200 bg-gray-50',
-    typeBadge: 'bg-white/90 text-gray-900',
-    iconColor: 'text-gray-800',
-    textColor: 'text-gray-900',
-    secondaryTextColor: 'text-gray-900',
-  },
-  peach: {
-    container: 'border border-gray-200 bg-[#F99D76]',
-    typeBadge: 'bg-white/90 text-gray-900',
-    iconColor: 'text-gray-800',
-    textColor: 'text-gray-900',
-    secondaryTextColor: 'text-gray-900',
-  },
-  default: {
-    container: 'border border-gray-200 bg-white',
-    typeBadge: 'bg-gray-100 text-gray-900',
-    iconColor: 'text-gray-800',
-    textColor: 'text-gray-900',
-    secondaryTextColor: 'text-gray-900',
-  },
-};
-
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.3,
-      ease: [0.16, 1, 0.3, 1], // Using cubic-bezier values instead of string
-    },
-  },
-  hover: {
-    y: -5,
-    transition: {
-      duration: 0.2,
-      ease: [0.16, 1, 0.3, 1],
-    },
-  },
-};
 
 export function JobCard({
   title,
@@ -108,7 +28,6 @@ export function JobCard({
       whileInView="visible"
       whileHover="hover"
       viewport={{ once: true }}
-
     >
       {variant === 'featured' && (
         <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-bl-lg rounded-tr-xl">

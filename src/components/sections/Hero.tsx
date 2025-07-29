@@ -1,9 +1,9 @@
 'use client';
 
-import { SearchBar } from '@/components/ui/SearchBar';
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
-import { motion } from 'framer-motion';
+import { SearchBar } from '@/components/ui/SearchBar';
 import { stats } from '@/lib/constants';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 export function Hero() {
@@ -15,7 +15,7 @@ export function Hero() {
     <section className="relative overflow-hidden bg-[#064EA4] min-h-[600px] sm:min-h-[700px] lg:min-h-[600px] flex items-center">
       <div className="absolute -bottom-1 -right-1 h-24 w-24 rounded-tl-full bg-[#FCDF69] backdrop-blur-sm" />
       <div className="absolute -top-6 -left-6 h-32 w-32 rounded-full bg-[#F99D76] backdrop-blur-sm" />
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:flex lg:items-center lg:gap-x-10 lg:px-8 py-12 sm:py-16 lg:py-0">
+      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:flex lg:items-center lg:gap-x-10 lg:px-8 py-12 sm:py-16 lg:py-0">
         <div className="mx-auto w-full max-w-2xl lg:mx-0 lg:flex-auto lg:py-12">
           <AnimateOnScroll className="text-center lg:text-left">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
@@ -49,7 +49,7 @@ export function Hero() {
 
         <div className="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow flex justify-center lg:block">
           <AnimateOnScroll
-            delay={1}
+            delay={0.5}
             direction="right"
             className="relative w-full max-w-sm lg:max-w-none mx-auto"
           >
@@ -65,7 +65,7 @@ export function Hero() {
               </div>
             </div>
 
-            <motion.div 
+            <motion.div
               className="mt-8 grid grid-cols-3 gap-3 sm:gap-4"
               initial="hidden"
               whileInView="visible"
@@ -75,10 +75,10 @@ export function Hero() {
                 visible: {
                   opacity: 1,
                   transition: {
-                    delayChildren: 0.3,
-                    staggerChildren: 0.2
-                  }
-                }
+                    delayChildren: 0.2,
+                    staggerChildren: 0.2,
+                  },
+                },
               }}
             >
               {stats.map((stat) => (
@@ -87,7 +87,7 @@ export function Hero() {
                   className="overflow-hidden rounded-xl bg-white p-3 text-center shadow hover:shadow-md transition-shadow sm:p-4"
                   variants={{
                     hidden: { y: 20, opacity: 0 },
-                    visible: { y: 0, opacity: 1 }
+                    visible: { y: 0, opacity: 1 },
                   }}
                 >
                   <p className="text-xl font-bold text-indigo-600 sm:text-2xl">{stat.value}</p>

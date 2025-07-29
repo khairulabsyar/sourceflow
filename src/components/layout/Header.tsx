@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
 export function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -77,7 +77,7 @@ export function Header() {
           {headerNavigation.map((item) => (
             <div
               key={item.name}
-              className="relative group"
+              className="relative"
             >
               <button
                 type="button"
@@ -89,7 +89,7 @@ export function Header() {
               </button>
               <div
                 ref={dropdownRef}
-                className={`absolute -left-8 top-full z-10 mt-3 w-56 rounded-xl bg-white p-2 shadow-lg ring-1 ring-gray-900/5 ${
+                className={`absolute -left-8 top-full z-1 mt-3 w-56 rounded-xl bg-white p-2 shadow-lg ring-1 ring-gray-900/5 ${
                   openDropdown === item.name ? 'block' : 'hidden'
                 }`}
               >
